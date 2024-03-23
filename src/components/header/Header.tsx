@@ -76,7 +76,7 @@ export default function Header() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <div className="flex justify-center items-center m-10 gap-4">
+      <div className="flex justify-center items-center mb-28 gap-4">
         <div>
           <Select
             defaultValue={selectedCuisine}

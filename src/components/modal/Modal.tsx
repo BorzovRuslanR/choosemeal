@@ -10,7 +10,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
           <div className="relative bg-white rounded-lg p-8 max-w-3xl w-full overflow-y-auto max-h-screen">
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-10 right-10 text-gray-500 hover:text-gray-700"
               onClick={onClose}
             >
               <svg
