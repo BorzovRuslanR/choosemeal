@@ -24,7 +24,7 @@ export default function Header() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch("/src/db/db.json")
+    fetch("/public/db/db.json")
       .then((response) => response.json())
       .then((data) => {
         setAllRecipes(data.recipes);
