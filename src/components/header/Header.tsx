@@ -1,4 +1,4 @@
-import { Recipe } from '@/db/db.types'; 
+import { Recipe }  from '@/db/db.types';
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button"
 
@@ -24,7 +24,7 @@ export default function Header() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch("/public/db/db.json")
+    fetch("/src/db/db.json")
       .then((response) => response.json())
       .then((data) => {
         setAllRecipes(data.recipes);
