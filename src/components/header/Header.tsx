@@ -24,7 +24,12 @@ export default function Header() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch("/src/db/db.json")
+    fetch("/src/db/db.json", {
+      headers: {
+        accept: 'application/json',
+        'User-agent': 'learning app',
+      }
+    })
       .then((response) => response.json())
       .then((data) => {
         setAllRecipes(data.recipes);
