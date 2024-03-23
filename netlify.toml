@@ -1,0 +1,3 @@
+[[redirects]]
+  from = "/src/db/db.json"
+  to = "/db.json"
