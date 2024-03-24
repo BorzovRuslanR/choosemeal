@@ -123,14 +123,16 @@ export default function Header() {
         <Modal onClose={toggleModal}>
           {filteredRecipes.map((recipe: Recipe, index) => (
             <div className="m-10" key={index}>
-              <h2>{recipe.title}</h2>
+              <h2 className='text-[#802bb1] text-lg font-bold mb-4'>{recipe.title}</h2>
               <img
-                className="w-72 h-60 rounded-lg object-contain aspect-w-4"
+                className="w-72 h-60 rounded-lg object-contain aspect-w-4 border border-[#564f6f] "
                 src={recipe.image}
                 alt={recipe.title}
               />
-              <p>Время готовки: {recipe.cookingTime}</p>
-              <p>Количество порций: {recipe.servings}</p>
+              <div className='mb-4 mt-4 bg-[#7c7494]'>
+                <p>Время готовки: {recipe.cookingTime}</p>
+                <p>Количество порций: {recipe.servings}</p>
+              </div>
               <h3>Ингредиенты:</h3>
               <ul>
                 {recipe.ingredients.map((ingredient, ingredientIndex) => (
@@ -139,7 +141,7 @@ export default function Header() {
                   </li>
               ))}
             </ul>
-            <h3>Инструкции:</h3>
+            <h3 className='mt-4'>Инструкции:</h3>
             <p>{recipe.recipe}</p>
           </div>
         ))}
