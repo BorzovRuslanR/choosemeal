@@ -9,6 +9,7 @@ import {
     SelectTrigger,
     SelectValue } from "../ui/select";
 import Modal from '../modal/Modal';
+import Logo from '../logo/Logo';
 
 
 
@@ -75,8 +76,9 @@ export default function Header() {
 
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <div className="flex justify-center items-center mb-28 gap-4">
+    <div className="flex flex-col justify-around items-center h-screen bg-indigo-600">
+      <Logo />
+      <div className="flex justify-center items-center gap-4">
         <div>
           <Select
             defaultValue={selectedCuisine}
@@ -107,14 +109,16 @@ export default function Header() {
           </Select>
         </div>
       </div>
-      <Button
-        variant="rounded"
-        size="round"
-        className={isLoading ? "animate-spin" : ""}
-        onClick={handleFilterRecipes}
-      >
-        <span className="text-3xl m-2">Click me</span>
-      </Button>
+      <div className='mb-20'>
+        <Button
+          variant="rounded"
+          size="round"
+          className={isLoading ? "animate-spin" : ""}
+          onClick={handleFilterRecipes}
+        >
+          <span className="text-3xl m-2">Click me</span>
+        </Button>
+      </div>
       {showModal && filteredRecipes.length > 0 ? (
         <Modal onClose={toggleModal}>
           {filteredRecipes.map((recipe: Recipe, index) => (
