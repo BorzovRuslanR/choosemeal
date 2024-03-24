@@ -1,4 +1,4 @@
-import React from 'react'
+
 import logoImage from '@/img/name111.png' 
 
 export default function Logo() {
