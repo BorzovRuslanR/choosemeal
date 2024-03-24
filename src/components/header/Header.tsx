@@ -116,7 +116,7 @@ export default function Header() {
           className={isLoading ? "animate-spin" : ""}
           onClick={handleFilterRecipes}
         >
-          <span className="text-3xl m-2">Click me</span>
+          <span className="text-3xl m-2">Выбрать!</span>
         </Button>
       </div>
       {showModal && filteredRecipes.length > 0 ? (
