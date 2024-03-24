@@ -129,7 +129,7 @@ export default function Header() {
                 src={recipe.image}
                 alt={recipe.title}
               />
-              <div className='mb-4 mt-4 bg-[#7c7494]'>
+              <div className='mb-4 mt-4 bg-[#7c7494] rounded-md'>
                 <p>Время готовки: {recipe.cookingTime}</p>
                 <p>Количество порций: {recipe.servings}</p>
               </div>
