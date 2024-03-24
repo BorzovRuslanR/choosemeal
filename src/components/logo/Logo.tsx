@@ -9,7 +9,7 @@ export default function Logo() {
         <img 
         src={logoImage}
         alt="Logo"
-        className="h-[140px] max-w-[100%] bg-red-600 m-4 rounded-md p-4" />
+        className="h-[140px] max-w-[100%] bg-[#564f6f] m-4 rounded-md p-4" />
     </div>
   )
 }

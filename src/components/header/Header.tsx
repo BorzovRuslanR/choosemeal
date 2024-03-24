@@ -76,7 +76,7 @@ export default function Header() {
 
 
   return (
-    <div className="flex flex-col justify-around items-center h-screen bg-indigo-600">
+    <div className="flex flex-col justify-around items-center h-screen bg-[#2d283e]">
       <Logo />
       <div className="flex justify-center items-center gap-4">
         <div>
@@ -84,10 +84,10 @@ export default function Header() {
             defaultValue={selectedCuisine}
             onValueChange={setSelectedCuisine}
           >
-            <SelectTrigger>
+            <SelectTrigger className='w-[175px] bg-[#d1d7e0]'>
               <SelectValue placeholder="Выбери кухню" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className='bg-[#d1d7e0]'>
               <SelectItem value="Американская кухня">Американская кухня</SelectItem>
               <SelectItem value="Русская кухня">Русская кухня</SelectItem>
             </SelectContent>
@@ -98,10 +98,10 @@ export default function Header() {
             value={selectedCategory}
             onValueChange={setSelectedCategory}
           >
-            <SelectTrigger>
+            <SelectTrigger className='w-[95px] bg-[#d1d7e0]'>
               <SelectValue placeholder="Выбери тип" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className='bg-[#d1d7e0]'>
               <SelectItem value="Завтрак">Завтрак</SelectItem>
               <SelectItem value="Обед">Обед</SelectItem>
               <SelectItem value="Ужин">Ужин</SelectItem>
@@ -116,7 +116,7 @@ export default function Header() {
           className={isLoading ? "animate-spin" : ""}
           onClick={handleFilterRecipes}
         >
-          <span className="text-3xl m-2">Выбрать!</span>
+          <span className="text-3xl m-4 text-[#d1d7e0]">ПОЛУЧИТЬ</span>
         </Button>
       </div>
       {showModal && filteredRecipes.length > 0 ? (
