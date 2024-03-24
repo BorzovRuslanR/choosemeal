@@ -113,7 +113,7 @@ export default function Header() {
         <Button
           variant="rounded"
           size="round"
-          className={isLoading ? "animate-spin" : ""}
+          className={isLoading ? "animate-spin-pulse-scale" : ""}
           onClick={handleFilterRecipes}
         >
           <span className="text-3xl m-4 text-[#d1d7e0]">ПОЛУЧИТЬ</span>
