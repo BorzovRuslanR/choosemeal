@@ -10,6 +10,7 @@ import {
     SelectValue } from "../ui/select";
 import Modal from '../modal/Modal';
 import Logo from '../logo/Logo';
+import ShadowText from '../shadowText/ShadowText';
 
 
 
@@ -101,7 +102,7 @@ export default function Header() {
             <SelectTrigger className='w-[95px] bg-[#d1d7e0]'>
               <SelectValue placeholder="Выбери тип" />
             </SelectTrigger>
-            <SelectContent className='bg-[#d1d7e0]'>
+            <SelectContent className='bg-[#d1d7e0] w-[95px]'>
               <SelectItem value="Завтрак">Завтрак</SelectItem>
               <SelectItem value="Обед">Обед</SelectItem>
               <SelectItem value="Ужин">Ужин</SelectItem>
@@ -116,7 +117,7 @@ export default function Header() {
           className={isLoading ? "animate-spin-pulse-scale" : ""}
           onClick={handleFilterRecipes}
         >
-          <span className="text-3xl m-4 text-[#d1d7e0]">ПОЛУЧИТЬ</span>
+          <ShadowText />
         </Button>
       </div>
       {showModal && filteredRecipes.length > 0 ? (
