@@ -100,6 +100,7 @@ export default function Header() {
             <SelectContent className='bg-[#d1d7e0]'>
               <SelectItem value="Американская кухня">Американская кухня</SelectItem>
               <SelectItem value="Русская кухня">Русская кухня</SelectItem>
+              <SelectItem value="Итальянская кухня">Итальянская кухня</SelectItem>
             </SelectContent>
           </Select>
         </div>
