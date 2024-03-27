@@ -46,7 +46,7 @@ export default function Header() {
   };
 
   const buttonClickSound = new Howl({
-    src: ['src/sounds/button5.mp3']
+    src: ['sound/button5.mp3']
   });
 
   const handleFilterRecipes = async () => {
