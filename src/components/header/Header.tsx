@@ -11,7 +11,7 @@ import {
 import Modal from '../modal/Modal';
 import Logo from '../logo/Logo';
 import ShadowText from '../shadowText/ShadowText';
-
+import { Howl } from 'howler';
 
 
 
@@ -45,6 +45,10 @@ export default function Header() {
     setShowModal(!showModal);
   };
 
+  const buttonClickSound = new Howl({
+    src: ['src/sounds/button5.mp3']
+  });
+
   const handleFilterRecipes = async () => {
     const filteredRecipes = allRecipes.filter((recipe: Recipe) => {
       if (selectedCuisine && selectedCuisine !== "" && recipe.cuisine !== selectedCuisine) {
@@ -61,6 +65,7 @@ export default function Header() {
 
     if (filteredRecipes.length > 0) {
       setIsLoading(true);
+      buttonClickSound.play();
       setShowModal(false);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -70,6 +75,8 @@ export default function Header() {
       setFilteredRecipes([randomRecipe]);
       setIsLoading(false);
       setShowModal(true);
+
+      
     } else {
       setFilteredRecipes([]);
     }
@@ -78,8 +85,10 @@ export default function Header() {
 
   return (
     <div className="flex flex-col justify-around items-center h-screen bg-[#2d283e]">
-      <Logo />
-      <div className="flex justify-center items-center gap-4">
+      <div className='mb-14'>
+        <Logo />
+      </div>
+      <div className="flex justify-center items-center gap-4 mb-20">
         <div>
           <Select
             defaultValue={selectedCuisine}
@@ -110,7 +119,7 @@ export default function Header() {
           </Select>
         </div>
       </div>
-      <div className='mb-20'>
+      <div className='mb-10'>
         <Button
           variant="rounded"
           size="round"
