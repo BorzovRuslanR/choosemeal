@@ -146,7 +146,7 @@ export default function Header() {
             <div className="m-10" key={index}>
               <h2 className='text-[#802bb1] text-lg font-bold mb-4'>{recipe.title}</h2>
               <img
-                className="w-72 h-60 rounded-lg object-contain aspect-w-4 border border-[#564f6f] "
+                className="w-full rounded-lg object-contain aspect-w-4 border border-[#564f6f] "
                 src={recipe.image}
                 alt={recipe.title}
               />
@@ -158,7 +158,7 @@ export default function Header() {
               <ul>
                 {recipe.ingredients.map((ingredient, ingredientIndex) => (
                   <li key={ingredientIndex}>
-                    {ingredient.quantity} {ingredient.name}
+                    &#8226; {ingredient.quantity} {ingredient.name}
                   </li>
               ))}
             </ul>
