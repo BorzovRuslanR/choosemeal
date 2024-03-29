@@ -1,5 +1,5 @@
 import { Recipe }  from '@/db/db.types';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button"
 
 import { 
@@ -45,11 +45,20 @@ export default function Header() {
     setShowModal(!showModal);
   };
 
-  const buttonClickSound = new Howl({
-    src: ['sound/button5.mp3']
-  });
+  const buttonClickSoundRef = useRef<Howl | null>(null);
+
+  useEffect(() => {
+    buttonClickSoundRef.current = new Howl({
+      src: ["sound/button5.mp3"],
+    });
+  }, []);
 
   const handleFilterRecipes = async () => {
+
+    if (buttonClickSoundRef.current) {
+      buttonClickSoundRef.current.play();
+    }
+
     const filteredRecipes = allRecipes.filter((recipe: Recipe) => {
       if (selectedCuisine && selectedCuisine !== "" && recipe.cuisine !== selectedCuisine) {
         return false;
@@ -65,7 +74,6 @@ export default function Header() {
 
     if (filteredRecipes.length > 0) {
       setIsLoading(true);
-      buttonClickSound.play();
       setShowModal(false);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -127,6 +135,7 @@ export default function Header() {
           className={isLoading ? "animate-spin-pulse-scale" : ""}
           onClick={handleFilterRecipes}
         >
+          <span className="neon-glow"></span>
           <ShadowText />
         </Button>
       </div>
