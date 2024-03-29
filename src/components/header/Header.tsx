@@ -109,6 +109,7 @@ export default function Header() {
               <SelectItem value="Американская кухня">Американская кухня</SelectItem>
               <SelectItem value="Русская кухня">Русская кухня</SelectItem>
               <SelectItem value="Итальянская кухня">Итальянская кухня</SelectItem>
+              <SelectItem value="Китайская кухня">Китайская кухня</SelectItem>
             </SelectContent>
           </Select>
         </div>
