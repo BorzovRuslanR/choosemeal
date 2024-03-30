@@ -133,7 +133,7 @@ export default function Header() {
         <Button
           variant="rounded"
           size="round"
-          className={isLoading ? "animate-spin-pulse-scale" : ""}
+          className={`animate-spin-pulse-scale ${isLoading ? "animate-pulse" : "pulse"}`}
           onClick={handleFilterRecipes}
         >
           <span className="neon-glow"></span>
